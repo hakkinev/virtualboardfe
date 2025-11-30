@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Board</title>
+    <link rel="stylesheet" href="board.css">
+</head>
+
+<body>
+    <header id="topbar">
+        <div class="left">
+            <span class="logo">Virtualboard</span>
+            <select id="boardSelect">
+                <option value="1">Projektplanering</option>
+            </select>
+        </div>
+        <div class="right">
+            <button id="newNoteBtn">Ny note</button>
+            <button id="logoutBtn">Logga ut</button>
+        </div>
+    </header>
+
+    <div id="board"></div>
+
+    <script src="board.js"></script>
+</body>
+
+</html>

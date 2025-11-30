@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("img/board.jpg");
+    background-size: cover; /* fyller hela skärmen */
+    background-position: center; /* centrerad */
+    background-repeat: no-repeat; /* ingen looping */
+    font-family: sans-serif;
+}
+
+#topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: black;
+    color: white;
+    z-index: 10; /* ovanför notes */
+}
+
+#topbar .left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+#topbar .right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 18px; 
+}
+
+/* select + knappar */
+#topbar select,
+#topbar button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+}
+
+#topbar select {
+    background: white;
+}
+
+#topbar button {
+    background: maroon;
+    color: white;
+    cursor: pointer;
+}
+
+#topbar button:hover {
+    filter: brightness(1.1);
+}
+
+#board {
+    position: relative;
+    width: 100vw; /* procent av skärmens bredd */
+    height: 100vh; /* procent av skärmens hjöd */
+    padding-top: 48px; /* notes inte hamnar bakom topbar */
+}
+
+.note {
+    width: 200px;
+    min-height: 200px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid black;
+    border-radius: 6px;
+    box-shadow: 2px 2px 3px black;
+    font-family: sans-serif;
+    cursor: move;
+    user-select: none; /* förhindra markering vid drag */
+}
+
+.note-header {
+    display: flex;
+    justify-content: flex-end;   
+    gap: 8px;                    
+    margin-bottom: 6px;          
+}
+
+
+.note-header button {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.note-header button:hover {
+    filter: brightness(1.15);
+}
+
+
+.note-content {
+    padding-top: 4px;
+    font-size: 15px;
+}
