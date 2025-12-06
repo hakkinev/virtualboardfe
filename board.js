@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/notes";
+const API_URL = "https://virtualboardbe.onrender.com/";
 
 // Token som sparades vid login
 const token = localStorage.getItem("authToken");
@@ -6,7 +6,7 @@ const token = localStorage.getItem("authToken");
 // Om ingen token => tillbaka till login
 if (!token) {
     alert("Ingen token hittad, logga in igen.");
-    window.location = "login.html";
+    window.location = "index.html";
 }
 
 // global flagga för att veta om vi drar en note just nu
@@ -70,7 +70,7 @@ function renderNotes(notes) {
         colorBtn.className = "note-color";
         colorBtn.textContent = "●";
         colorBtn.addEventListener("click", (e) => {
-            e.stopPropagation();        // starta inte drag
+            e.stopPropagation();// starta inte drag
             changeColor(box);
         });
 
@@ -79,7 +79,7 @@ function renderNotes(notes) {
         editBtn.className = "note-edit";
         editBtn.textContent = "✎";
         editBtn.addEventListener("click", async (e) => {
-            e.stopPropagation();        // starta inte drag
+            e.stopPropagation();// starta inte drag
             await editNote(box);
         });
 
@@ -88,7 +88,7 @@ function renderNotes(notes) {
         deleteBtn.className = "note-delete";
         deleteBtn.textContent = "x";
         deleteBtn.addEventListener("click", async (e) => {
-            e.stopPropagation();        // starta inte drag
+            e.stopPropagation();// starta inte drag
             await deleteNote(box);
         });
 
@@ -313,7 +313,7 @@ document.getElementById("newNoteBtn").addEventListener("click", createNote);
 // LOGOUT ta bort token och gå till login sidan
 document.getElementById("logoutBtn").addEventListener("click", () => {
     localStorage.removeItem("authToken");   // rensa JWT
-    window.location = "login.html";         // tillbaka till login
+    window.location = "index.html";         // tillbaka till login
 });
 
 

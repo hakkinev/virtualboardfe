@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/login";
+const API_URL = "https://virtualboardbe.onrender.com/";
 
 document.getElementById("loginButton").addEventListener("click", async () => {
     const email = document.getElementById("email").value;
