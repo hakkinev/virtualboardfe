@@ -1,4 +1,4 @@
-const API_URL = "https://virtualboardbe.onrender.com/";
+const API_URL = "https://virtualboardbe.onrender.com/notes";
 
 // Token som sparades vid login
 const token = localStorage.getItem("authToken");
@@ -209,7 +209,7 @@ async function changeColor(noteBox) {
 }
 
 async function loadBoards() {
-    const res = await fetch("http://localhost:8080/boards", {
+    const res = await fetch("https://virtualboardbe.onrender.com/boards", {
         headers: {
             Authorization: "Bearer " + token
         }
