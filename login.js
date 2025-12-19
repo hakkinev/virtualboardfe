@@ -14,9 +14,13 @@ document.getElementById("loginButton").addEventListener("click", async () => {
         const data = await res.json();
         console.log("Server response:", data);
 
-        if (res.ok && data.jwt) {
-            // spara token i localStorage
-            localStorage.setItem("authToken", data.jwt);
+        if (res.ok && data.accessToken && data.refreshToken) {
+
+            // spara access token (kort)
+            localStorage.setItem("authToken", data.accessToken)
+
+            // spara refresh token (lång)
+            localStorage.setItem("refreshToken", data.refreshToken)
 
             alert("Inloggning lyckades!");
 
